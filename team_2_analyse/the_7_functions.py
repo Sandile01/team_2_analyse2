@@ -66,6 +66,38 @@ def date_parser(dates):
     return date
 
 # function 4
+### START FUNCTION
+def extract_municipality_hashtags(df):
+    # your code here
+    mun_dict = {
+    '@CityofCTAlerts' : 'Cape Town',
+    '@CityPowerJhb' : 'Johannesburg',
+    '@eThekwiniM' : 'eThekwini' ,
+    '@EMMInfo' : 'Ekurhuleni',
+    '@centlecutility' : 'Mangaung',
+    '@NMBmunicipality' : 'Nelson Mandela Bay',
+    '@CityTshwane' : 'Tshwane'
+}
+     """
+    Modifies a dataframe to include two new columns: municipality and hashtag 
+    
+    Args: 
+         df (dataframe): input of a dataframe 
+         
+    Returns: 
+         dataframe: dataframe with two additional coloumns,
+              municipality column and list of hashtags from a tweet column
+    """
+    
+    
+    df["municipality"] = df["Tweets"].map(lambda x: x if x.startswith("@") else x) # iterate over the column to search for words that start wtih @
+    df["municipality"] = df["municipality"].map(mun_dict) # map the output to the mun-dict dictionary 
+    df["hashtags"] = df["Tweets"].str.lower().str.findall(r"(#\S+)") # set to lower string and find the pattern
+    df["hashtags"] = df["hashtags"].apply(lambda x: np.nan if len(x)==0 else x) # for where it is empty it should return NaN 
+    
+    return df # return dataframe with additional columns
+
+### END FUNCTION
 # function 5
 def number_of_tweets_per_day(df):
     """
