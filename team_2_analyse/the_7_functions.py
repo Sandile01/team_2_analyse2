@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # function 1
 # function 2
 # function 3
@@ -38,4 +36,3 @@ def number_of_tweets_per_day(df):
     return df.groupby(df['Date']).count()
 # function 6
 # function 7
->>>>>>> a1b7e73497ee8659b0db4f403d670a4b8e24f4a7
