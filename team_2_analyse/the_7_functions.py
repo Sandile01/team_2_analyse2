@@ -1,5 +1,46 @@
 # function 1
+### START FUNCTION
+def dictionary_of_metrics(items):
+    # your code here
+    """
+    This function takes in a list of numbers as an imput
+    and calculates the mean, median, standard deviation, variance,
+    minimum value, and the maximum value.
+    
+    All the metrics calculated
+    will be rounded to 2 decimal places
+    """
+    my_list = ['mean',round(np.mean(items),2),
+               'median',round(np.median(items),2),
+               'var', round(np.var(items, ddof =1),2),
+               'std',round(np.std(items, ddof = 1),2),
+               'min', round(np.min(items),2),
+               'max', round(np.max(items),2)
+               ]
+    dict_list = {my_list[i]:my_list[i+1] for i in range(0, len(my_list),2)}
+    return dict_list
+
+### END FUNCTION
 # function 2
+### START FUNCTION
+def five_num_summary(items):
+    # your code here
+    """
+    This function calculates the five number summary. In statistics, the
+    five number summary consists of the minimum value, first quartile'
+    median, third quartile, and the maximum value. The function will take 
+    a list of numbers as an input and 
+    output will be five number summary and all the values will be rounded to two decimal places
+    """
+    my_list = ['max', round(np.max(items),2),
+               'median',round(np.median(items),2),
+               'min', round(np.min(items),2),
+               'q1', round(np.quantile(items, .25),2),
+               'q3',round(np.quantile(items, .75),2)
+              ]
+    dict_list = {my_list[i]:my_list[i+1] for i in range(0, len(my_list),2)}
+    return dict_list
+### END FUNCTION
 # function 3
 def date_parser(dates):
     # your code here
