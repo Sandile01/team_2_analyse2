@@ -108,4 +108,12 @@ def number_of_tweets_per_day(df):
     df['Date'] = pd.to_datetime(df['Date']).apply(lambda i: i.date())
     return df.groupby(df['Date']).count()
 # function 6
+def word_splitter():
+    new_list = []
+    tweets = df['Tweets'].str.lower()
+    for i in range(len(tweets)):
+        new_list.append(tweets[i].split())
+    series_with_split_tweets = pd.Series(new_list.name='Split Tweets')
+    data_frame_with_split_tweets = pd.concat((df,series_with_split_tweets),axis=1)
+    return data_frame_with_split_tweets
 # function 7
