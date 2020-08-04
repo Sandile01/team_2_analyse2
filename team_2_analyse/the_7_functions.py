@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+# function 1
+# function 2
+# function 3
 def date_parser(dates):
     # your code here
     """This function takes as input a list of 
@@ -21,6 +26,8 @@ def date_parser(dates):
         date = date + [date1]
     return date
 
+# function 4
+# function 5
 def number_of_tweets_per_day(df):
     """
     This funtion takes a tweets pandas
@@ -29,3 +36,6 @@ def number_of_tweets_per_day(df):
     """
     df['Date'] = pd.to_datetime(df['Date']).apply(lambda i: i.date())
     return df.groupby(df['Date']).count()
+# function 6
+# function 7
+>>>>>>> a1b7e73497ee8659b0db4f403d670a4b8e24f4a7
