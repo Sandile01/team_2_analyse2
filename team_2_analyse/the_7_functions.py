@@ -116,4 +116,22 @@ def word_splitter():
     series_with_split_tweets = pd.Series(new_list.name='Split Tweets')
     data_frame_with_split_tweets = pd.concat((df,series_with_split_tweets),axis=1)
     return data_frame_with_split_tweets
+
 # function 7
+
+### START FUNCTION
+def stop_words_remover(df):
+    """
+    This function removes all the english stop words from given tweet.
+    
+    """
+    
+    # your code here
+    stop_words = stop_words_dict['stopwords']
+    df["Without Stop Words"] = df["Tweets"].str.lower().str.split()
+    df["Without Stop Words"] = df["Without Stop Words"].apply(lambda x: [word for word in x if word not in stop_words])
+    
+    return df
+
+
+### END FUNCTION
