@@ -3,12 +3,20 @@
 def dictionary_of_metrics(items):
     # your code here
     """
-    This function takes in a list of numbers as an imput
-    and calculates the mean, median, standard deviation, variance,
+    This function calculates the mean, median, standard deviation, variance,
     minimum value, and the maximum value.
     
     All the metrics calculated
     will be rounded to 2 decimal places
+
+    Args:
+    The function takes a list of numbers as input
+    e.g list = [56,78,45,23,59,86,4]
+    dictionary_of_metrics(list)
+
+    returns:
+    The function returns a dictionary containing the calculated netrics.
+    All the metrics calculated will be rounded to 2 decimal places
     """
     my_list = ['mean',round(np.mean(items),2),
                'median',round(np.median(items),2),
@@ -28,9 +36,15 @@ def five_num_summary(items):
     """
     This function calculates the five number summary. In statistics, the
     five number summary consists of the minimum value, first quartile'
-    median, third quartile, and the maximum value. The function will take 
-    a list of numbers as an input and 
-    output will be five number summary and all the values will be rounded to two decimal places
+    median, third quartile, and the maximum value.
+    
+    Args:
+    The function takes a list of numbers as input
+    e.g list = [56,78,45,23,59,86,4]
+    five_num_summary(list)
+    returns
+    The function will return a dictionary containing the calculated five number summary
+     with all values in the dictionary rounded to two decimal places
     """
     my_list = ['max', round(np.max(items),2),
                'median',round(np.median(items),2),
