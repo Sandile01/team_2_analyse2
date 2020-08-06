@@ -150,7 +150,7 @@ def stop_words_remover(df):
     df["Without Stop Words"] = df["Tweets"].str.lower().str.split() # makes all the english stop words lowercase and split the words into a list
     df["Without Stop Words"] = df["Without Stop Words"].apply(lambda x: [word for word in x if word not in stop_words]) # gives all the words that are not in the stop words column
     
-    return df # returns the modified dataframe
+    return df # returns the modified dataframe without the stop words
 
 
 
