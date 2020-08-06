@@ -136,12 +136,12 @@ def word_splitter():
 ### START FUNCTION
 def stop_words_remover(df):
     """
-    This function removes all the english stop words from given tweet.
+    This function removes all the english stop words from given tweet
      Args: 
          df (dataframe): input of a dataframe 
          
     Returns: 
-         dataframe: dataframe without the english stop words frpm a tweet.
+         dataframe: dataframe without the english stop words from a tweet
               
     """
     
@@ -150,7 +150,7 @@ def stop_words_remover(df):
     df["Without Stop Words"] = df["Tweets"].str.lower().str.split() # makes all the english stop words lowercase and split the words into a list
     df["Without Stop Words"] = df["Without Stop Words"].apply(lambda x: [word for word in x if word not in stop_words]) # gives all the words that are not in the stop words column
     
-    return df # returns the modified dataframe without the stop words
+    return df # returns the modified dataframe without the english stop word
 
 
 
