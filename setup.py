@@ -7,7 +7,7 @@ setup(
     license='MIT',
     description='7 Functions for eskom Data',
     long_description=open('README.md').read(),
-    install_requires=['numpy'],
+    install_requires=['numpy','pandas'],
     url='https://github.com/<SandileS>/<the_7_functions.py>',
     author='<Mkhabela Sandile>',
     author_email='<saintsandile01@gmail.com>'
