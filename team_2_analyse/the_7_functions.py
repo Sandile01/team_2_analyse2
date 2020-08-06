@@ -56,28 +56,25 @@ def five_num_summary(items):
     return dict_list
 ### END FUNCTION
 # function 3
+### START FUNCTION
 def date_parser(dates):
     # your code here
-    """This function takes as input a list of 
-       datetime strings and returns only the
-       date in 'yyyy-mm-dd' format"""
-    """This function takes as input a list of 
-       datetime strings and returns only the
-       date in 'yyyy-mm-dd' format"""
-    date = [] #declare an empty date list
-    """We iterate through the input list of datetime 
-       strings, do a date conversion to 'yyyy-mm-dd'. 
-       Then we it to string by using str() and store 
-       in a variable date1.
-       The next step then add each converted date into 
-       the initial empty variable list (date) and this 
-       is converted to a list and after final iteration 
-       is done, the list is then returned
     """
-    for i in dates:
-        date1 = str(pd.to_datetime(i).date())
-        date = date + [date1]
-    return date
+    This function takes in a list of datetime strings as input 
+     and returns only the date in 'yyyy-mm-dd' format.
+       
+    Args: 
+         df (<list>): input of a datetime list strings ('yyyy-mm-dd hh:mm:ss')
+
+    Returns: 
+         list: a list of strings with elements in the 'yyyy-mm-dd' format
+    """
+    date = [] #declare an empty date list
+    for i in dates: # We iterate through the input list of datetime strings one after the other
+        date1 = str(pd.to_datetime(i).date()) # Datetime conversion to 'yyyy-mm-dd' and converted to strings
+        date = date + [date1] # Add each converted date into the initial empty variable list (date) declared above
+    return date #return the final list after all the dates have been added to the empty variable list (date)
+### END FUNCTION
 
 # function 4
 ### START FUNCTION
@@ -112,15 +109,28 @@ def extract_municipality_hashtags(df):
     return df # return dataframe with additional columns
 
 ### END FUNCTION
+
 # function 5
+### START FUNCTION
 def number_of_tweets_per_day(df):
     """
-    This funtion takes a tweets pandas
-    dataframe as input and calculates 
-    the number of tweets posted per day    
+    Calculation of the number of tweets posted per day 
+    
+    Args: 
+         df(<dataframe>): input of a Tweets Pandas dataframe 
+         
+    Returns: 
+         dataframe: dataframe grouped by day (Date should be the index in the format 'yyyy-mm-dd'), 
+                    with the number of tweets for each day (column should be 'Tweets')
+              
     """
-    df['Date'] = pd.to_datetime(df['Date']).apply(lambda i: i.date())
-    return df.groupby(df['Date']).count()
+    
+    df['Date'] = pd.to_datetime(df['Date']).apply(lambda i: i.date())# convert datetime to date ('yyyy-mm-dd') and apply it to each element in 'Date' column of the dataframe
+
+    return df.groupby(df['Date']).count() #Group each tweet by the 'Date' column (now index) and return count for each day (column named 'Tweets')
+
+### END FUNCTION
+
 # function 6
 def word_splitter():
     new_list = []
