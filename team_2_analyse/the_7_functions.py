@@ -12,7 +12,7 @@ def dictionary_of_metrics(items):
     Args:
     The function takes a list of numbers as input
     e.g list = [56,78,45,23,59,86,4]
-    dictionary_of_metrics(list)
+    dictionary_of_metrics(list) = {'mean': 50.14,'median': 56.0,'var': 844.48,'std': 29.06,'min': 4,'max': 86}
 
     returns:
     The function returns a dictionary containing the calculated netrics.
@@ -40,8 +40,8 @@ def five_num_summary(items):
     
     Args:
     The function takes a list of numbers as input
-    e.g list = [56,78,45,23,59,86,4]
-    five_num_summary(list)
+    e.g lists = [56,78,45,23,59,86,4]
+    five_num_summary(list) = {'max': 86, 'median': 56.0, 'min': 4, 'q1': 34.0, 'q3': 68.5}
     returns
     The function will return a dictionary containing the calculated five number summary
      with all values in the dictionary rounded to two decimal places
