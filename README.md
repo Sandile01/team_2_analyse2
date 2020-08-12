@@ -18,12 +18,12 @@ team_2_analyse is a python package that contains seven functions.
 
 ## Installation
 
-pip install git+https://github.com/Sandile01/team_2_analyse.git
+pip install git+https://github.com/Sandile01/team_2_analyse2.git
 
 
 ## Upgrade
 
-pip install --upgrade git+https://github.com/Sandile01/team_2_analyse.git
+pip install --upgrade git+https://github.com/Sandile01/team_2_analyse2.git
 
 
 ## Contributors
