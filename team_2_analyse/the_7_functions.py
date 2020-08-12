@@ -130,7 +130,7 @@ def number_of_tweets_per_day(df):
 
 # function 6
 ### START FUNCTION
-def word_splitter():
+def word_splitter(df):
     """
     This function splits the sentences in a dataframe's column into a list of separate words
      Args: 
@@ -144,7 +144,7 @@ def word_splitter():
     tweets = df['Tweets'].str.lower()
     for i in range(len(tweets)):
         new_list.append(tweets[i].split())
-    series_with_split_tweets = pd.Series(new_list.name='Split Tweets')
+    series_with_split_tweets = pd.Series(new_list,name='Split Tweets')
     data_frame_with_split_tweets = pd.concat((df,series_with_split_tweets),axis=1)
     return data_frame_with_split_tweets # returns the modified dataframe with split tweets
 ### END FUNCTION
