@@ -82,7 +82,7 @@ def date_parser(dates):
 # function 4
 ### START FUNCTION
 def extract_municipality_hashtags(df):
-     """
+    """
     Modifies a dataframe to include two new columns: municipality and hashtag 
     
     Args: 
@@ -93,15 +93,15 @@ def extract_municipality_hashtags(df):
               municipality column and list of hashtags from a tweet column
     """
     
-     mun_dict = {
-    '@CityofCTAlerts' : 'Cape Town',
-    '@CityPowerJhb' : 'Johannesburg',
-    '@eThekwiniM' : 'eThekwini' ,
-    '@EMMInfo' : 'Ekurhuleni',
-    '@centlecutility' : 'Mangaung',
-    '@NMBmunicipality' : 'Nelson Mandela Bay',
-    '@CityTshwane' : 'Tshwane'
-     }
+    mun_dict = {
+        '@CityofCTAlerts' : 'Cape Town',
+        '@CityPowerJhb' : 'Johannesburg',
+        '@eThekwiniM' : 'eThekwini',
+        '@EMMInfo' : 'Ekurhuleni',
+        '@centlecutility' : 'Mangaung',
+        '@NMBmunicipality' : 'Nelson Mandela Bay',
+        '@CityTshwane' : 'Tshwane'
+    }
     
     df["municipality"] = df["Tweets"].map(lambda x: x if x.startswith("@") else x) # iterate over the column to search for words that start wtih @
     df["municipality"] = df["municipality"].map(mun_dict) # map the output to the mun-dict dictionary 
