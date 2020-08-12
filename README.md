@@ -1,6 +1,6 @@
-# team_2_analyse
+# team_2_analyse2
 
-team_2_analyse is a python package that contains seven functions.
+team_2_analyse2 is a python package that contains seven functions.
 
 1. dictionary_of_metrics(): receives an input(list) and calculates statistical metrics, namely the mean, median, standard deviation, variance, minimum value and the maximum value.
 
