@@ -107,7 +107,6 @@ def extract_municipality_hashtags(df):
     df["municipality"] = df["municipality"].map(mun_dict) # map the output to the mun-dict dictionary 
     df["hashtags"] = df["Tweets"].str.lower().str.findall(r"(#\S+)") # set to lower string and find the pattern
     df["hashtags"] = df["hashtags"].apply(lambda x: np.nan if len(x)==0 else x) # for where it is empty it should return NaN 
-    
     return df # return dataframe with additional columns
 ### END FUNCTION
 
@@ -126,7 +125,6 @@ def number_of_tweets_per_day(df):
     """
     
     df['Date'] = pd.to_datetime(df['Date']).apply(lambda i: i.date()) # convert datetime to date ('yyyy-mm-dd') and apply it to each element in 'Date' column of the dataframe
-
     return df.groupby(df['Date']).count() # group each tweet by the 'Date' column (now index) and return count for each day (column named 'Tweets')
 ### END FUNCTION
 
@@ -167,6 +165,5 @@ def stop_words_remover(df):
     stop_words = stop_words_dict['stopwords'] # defining the stop words 
     df["Without Stop Words"] = df["Tweets"].str.lower().str.split() # makes all the english stop words lowercase and split the words into a list
     df["Without Stop Words"] = df["Without Stop Words"].apply(lambda x: [word for word in x if word not in stop_words]) # gives all the words that are not in the stop words column
-    
     return df # returns the modified dataframe without the english stop word
 ### END FUNCTION
