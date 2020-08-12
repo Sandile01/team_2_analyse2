@@ -89,8 +89,8 @@ def extract_municipality_hashtags(df):
          df (dataframe): input of a dataframe 
          
     Returns: 
-         dataframe: dataframe with two additional coloumns,
-              municipality column and list of hashtags from a tweet column
+        dataframe: dataframe with two additional coloumns, 
+        municipality column and list of hashtags from a tweet column
     """
     
     mun_dict = {
