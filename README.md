@@ -20,6 +20,14 @@ team_2_analyse2 is a python package that contains seven functions.
 
 pip install git+https://github.com/Sandile01/team_2_analyse2.git
 
+## Import
+```from team_2_analyse import the_7_functions```
+
+## Function invocation
+the_7_functions.<function name>
+
+e.g ```the_7_functions.five_num_summary()```
+
 
 ## Upgrade
 
